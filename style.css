@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+body {
+    
+    background-color: #333;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.kotak {
+    background-color: #444;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    width: 500px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 30px;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+#buttons {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: row; /* Arrange buttons horizontally */
+    justify-content: space-between; /* Distribute space between buttons */
+}
+
+button {
+    margin-top: 20px;
+    flex: 1;
+    padding: 10px;
+    background-color: #fdcb35;
+    color: #1e1e1e;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+button i {
+    margin-right: 8px; /* Add more space between the icon and text */
+}
+
+button:last-child {
+    margin-right: 0;
+}
+button:nth-child(1) {
+    background-color: #ff4d4d; /* Red color for the reset button */
+    color: #ffffff;
+}
+
+button:hover {
+    background-color: #d1ab19; /* Darker shade on hover */
+}
+#result {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #fdcb35;
+    color: #1e1e1e;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+   
+}
+
+
+#result {
+    display: none;
+}
+/* Add this to your existing CSS or create a new style.css file */
+
+footer {
+  
+    color: #fff;
+    text-align: center;
+   
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-icons a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 24px;
+}
+
+.footer-icons a:hover {
+    color: #fdcb35;
+}
+
+@media screen and (max-width: 600px) {
+    .kotak {
+        background-color: #333;
+        width: 80%; /* Adjust width for smaller screens */
+        max-width: none; /* Remove max-width for smaller screens */
+    }
+
+    #buttons {
+        flex-direction: row; /* Align buttons horizontally on larger screens */
+    }
+    button {
+        padding: 8px;
+    }
+}

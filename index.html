@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Legends Winrate Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+   
+   
+</head>
+
+<body>
+    <script type="text/javascript">
+	atOptions = {
+		'key' : '90e990c3317311c1fa4d4ed63a9076f0',
+		'format' : 'iframe',
+		'height' : 250,
+		'width' : 300,
+		'params' : {}
+	};
+	document.write('');
+</script>
+    <div class="kotak">
+        <h2>KALKULATOR MLBB</h2>
+        <label for="heroName">Nama Hero:</label>
+        <input type="text" id="heroName" placeholder="contoh: khufra" oninput="calculateMatches()">
+
+        <label for="totalMatches">Match Sekarang:</label>
+        <input type="number" id="totalMatches" placeholder="contoh: 283" oninput="calculateMatches()">
+
+        <label for="currentWinrate">Winrate Sekarang:</label>
+        <input type="number" id="currentWinrate" placeholder="contoh: 40.7" oninput="calculateMatches()">
+
+        <label for="targetWinrate">Target Winrate:</label>
+        <input type="number" id="targetWinrate" placeholder="contoh: 90" oninput="calculateMatches()">
+
+        
+        <div id="result"></div>
+
+        <div id="buttons">
+            <button onclick="resetInputs()">
+                <i class='bx bx-reset' ></i>
+                Reset</button>
+            <button onclick="copyOutput()">
+                <i class='bx bx-copy' ></i>
+                Salin</button>
+           
+            <button onclick="orderJoki()">
+                <i class='bx bx-cart-download'></i> Order Joki
+            </button>
+
+        </div>
+        <script type="text/javascript">
+	atOptions = {
+		'key' : '90e990c3317311c1fa4d4ed63a9076f0',
+		'format' : 'iframe',
+		'height' : 250,
+		'width' : 300,
+		'params' : {}
+	};
+	document.write('');
+</script>
+    </div>
+<!-- Add this after the .kotak div in your HTML -->
+<footer>
+    <p>&copy; Ulin kT. All rights reserved.</p>
+    <div class="footer-icons">
+        <a href="https://www.instagram.com/uliin_kt?igsh=N3Y4ZWlmcmZjMjhu" target="_blank">
+            <i class='bx bxl-instagram' ></i>
+        </a>
+        <a href="https://www.tiktok.com/@moorelovelock/video/7332875440408890629?is_from_webapp=1&sender_device=pc" target="_blank">
+            <i class='bx bxl-tiktok'></i>
+        </a>
+    </div>
+</footer>
+<script type="text/javascript">
+	atOptions = {
+		'key' : '90e990c3317311c1fa4d4ed63a9076f0',
+		'format' : 'iframe',
+		'height' : 250,
+		'width' : 300,
+		'params' : {}
+	};
+	document.write('');
+</script>
+<div id="container-180e37fb451ca532f5233178dcf09c35"></div>
+    <script>
+function calculateMatches() {
+    var heroName = document.getElementById('heroName').value;
+    var totalMatches = document.getElementById('totalMatches').value;
+    var currentWinrate = document.getElementById('currentWinrate').value;
+    var targetWinrate = document.getElementById('targetWinrate').value;
+
+    var resultElement = document.getElementById('result');
+
+    if (heroName && totalMatches && currentWinrate && targetWinrate) {
+        totalMatches = parseInt(totalMatches);
+        currentWinrate = parseFloat(currentWinrate);
+        targetWinrate = parseFloat(targetWinrate);
+
+        var matchesNeeded = Math.ceil((targetWinrate * totalMatches - currentWinrate * totalMatches) / (100 - targetWinrate));
+        var totalTimeNeeded = matchesNeeded * 5; // Assuming 1 match takes 5 minutes
+
+        var hours = Math.floor(totalTimeNeeded / 60);
+        var minutes = totalTimeNeeded % 60;
+
+        // Ubah nama hero menjadi huruf kapital dan teks menjadi tebal
+        var capitalizedHero = '<strong>' + heroName.toUpperCase() + '</strong>';
+
+        // Ubah pesan output dengan menggunakan tag <strong>
+        if (hours > 0) {
+            resultElement.innerHTML = 'Kamu harus memainkan hero ' + capitalizedHero +
+                ' <strong>' + matchesNeeded + ' MATCH </strong>TANPA KALAH untuk mendapat WINRATE <strong>' +
+                targetWinrate + '%</strong>. Total matches: <strong>' + (totalMatches + matchesNeeded) + '</strong>. ' +
+                'Waktu yang dibutuhkan: <strong>' + hours + ' jam ' + minutes + ' menit</strong>.';
+        } else {
+            resultElement.innerHTML = 'Kamu harus memainkan hero ' + capitalizedHero +
+                ' <strong>' + matchesNeeded + ' MATCH </strong>TANPA KALAH untuk mendapat WINRATE <strong>' +
+                targetWinrate + '%</strong>. Total matches: <strong>' + (totalMatches + matchesNeeded) + '</strong>. ' +
+                'Waktu yang dibutuhkan: <strong>' + minutes + ' menit</strong>.';
+        }
+
+        resultElement.style.display = 'block'; // Show the result element
+    } else {
+        resultElement.innerHTML = '';
+        resultElement.style.display = 'none'; // Hide the result element
+    }
+}
+
+
+
+        function resetInputs() {
+            document.getElementById('heroName').value = '';
+            document.getElementById('totalMatches').value = '';
+            document.getElementById('currentWinrate').value = '';
+            document.getElementById('targetWinrate').value = '';
+
+            var resultElement = document.getElementById('result');
+            resultElement.innerHTML = '';
+        }
+
+        function copyOutput() {
+            var outputText = document.getElementById('result').innerText;
+            var textarea = document.createElement('textarea');
+            textarea.value = outputText;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+            alert('Output berhasil disalin!');
+        }
+
+        function orderJoki() {
+            // Implement your order joki logic here
+            alert('Order Joki function placeholder');
+        }
+    </script>
+<script type="text/javascript">
+	atOptions = {
+		'key' : '90e990c3317311c1fa4d4ed63a9076f0',
+		'format' : 'iframe',
+		'height' : 250,
+		'width' : 300,
+		'params' : {}
+	};
+	document.write('');
+</script>
+
+
+</body>
+
+</html>
